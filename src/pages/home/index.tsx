@@ -218,7 +218,7 @@ export default function Home() {
                     <ul className="experience-info-list">
                       <li>
                         <p className="job-title">
-                          Eletric Guitar, Guitar and Singing
+                          Electric Guitar, Acoustic Guitar and Singing
                         </p>
                       </li>
                     </ul>
