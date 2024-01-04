@@ -12,27 +12,37 @@ const Dots = keyframes`
     transform: translateY(30px);
     opacity: 1;
 
-    background-color: #c2c2c2;
+    background-color: #6c757d;
   }
 `;
 
 const GoToLeft = keyframes`
    from {
-    transform: translateX(130px);
+    transform: translateX(150px);
   }
 
   to {
-    transform: translateX(-130px);
+    transform: translateX(-210px);
   }
 `;
 
 const GoToRight = keyframes`
   from {
-    transform: translateX(-130px);
+    transform: translateX(-150px);
   }
 
   to {
-    transform: translateX(130px);
+    transform: translateX(212px);
+  }
+`;
+
+const GoToCenter = keyframes`
+  from {
+    transform: translateY(-120px);
+  }
+
+  to {
+    transform: translate3d(-5px, 0px, 0px);
   }
 `;
 
@@ -81,7 +91,7 @@ export const Container = styled.main`
     width: 15px;
 
     height: 15px;
-    background-color: #c2c2c2;
+    background-color: #6c757d;
 
     border-radius: 4px 4px 18px 18px;
     animation: ${Dots} 0.75s infinite alternate;
@@ -137,7 +147,7 @@ export const Heading = styled.div`
     font-weight: 400;
     line-height: 1.5rem;
 
-    color: #c2c2c2;
+    color: #6c757d;
   }
 
   .heading-links {
@@ -184,7 +194,7 @@ export const Bio = styled.div`
     font-weight: 400;
     font-size: 0.875rem; // 14px
 
-    color: #c2c2c2;
+    color: #6c757d;
   }
 
   a {
@@ -223,46 +233,15 @@ export const Bio = styled.div`
 `;
 
 export const SelectForm = styled.div`
-  width: 560px;
+  width: 620px;
   overflow: hidden;
 
   margin-top: 1rem;
   /* margin-left: 50px; */
 
-  .select-heading {
-    width: 100%;
-    background-color: #f2f2f2;
-
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    gap: 1rem;
-
-    height: 50px;
-    border-radius: 4px;
-
-    position: relative;
-    cursor: pointer;
-
-    span {
-      position: relative;
-      z-index: 100;
-
-      font-size: 1rem;
-      font-weight: 400;
-
-      width: 100%;
-      padding: 4px 8px;
-    }
-
-    span:nth-child(2) {
-      right: 10px;
-    }
-  }
-
   [data-active="false"] {
     display: none;
+    opacity: 0;
   }
 
   [data-active="true"] {
@@ -275,6 +254,42 @@ export const SelectForm = styled.div`
 
   [data-animation="up"] {
     animation: ${AnimateFromUp} 0.32s forwards;
+  }
+
+  [data-animation="top"] {
+    animation: ${AnimateFromUp} 0.32s forwards;
+  }
+`;
+
+export const SelectHeading = styled.div`
+  width: 100%;
+  background-color: #f2f2f2;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  gap: 1rem;
+
+  height: 50px;
+  border-radius: 4px;
+
+  position: relative;
+  cursor: pointer;
+
+  span {
+    position: relative;
+    z-index: 100;
+
+    font-size: 1rem;
+    font-weight: 400;
+
+    width: 100%;
+    padding: 4px 8px;
+  }
+
+  span:nth-child(2) {
+    right: 10px;
   }
 `;
 
@@ -291,6 +306,12 @@ export const Skills = styled.div`
     font-weight: 600;
     font-size: 1.5rem;
     color: #111;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .skill-title:hover {
+    opacity: 0.72;
   }
 
   .stack > ul {
@@ -320,18 +341,29 @@ export const Skills = styled.div`
   }
 
   .skill h2 {
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #1f1f1f;
 
     line-height: 1.5rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  .skill h2:hover {
+    opacity: 0.72;
   }
 
   .skill p {
-    font-size: 0.625rem;
+    font-size: 13px;
     font-weight: 500;
-    color: #c2c2c2;
+    color: #6c757d;
     text-transform: capitalize;
+
+    transition: 0.3s ease-in-out;
+  }
+
+  .skill p:hover {
+    filter: brightness(0.12);
   }
 `;
 
@@ -342,7 +374,9 @@ export const Portfolio = styled.div`
   grid-template-areas:
     "about about"
     "education education"
+    "certificate certificate"
     "experience experience"
+    "languages languages"
     "others others";
   gap: 1rem;
 
@@ -361,9 +395,89 @@ export const Portfolio = styled.div`
     font-weight: 400;
 
     line-height: 1.5rem;
-    color: #c2c2c2;
+    color: #6c757d;
 
     margin-bottom: 8px;
+  }
+`;
+
+export const Contact = styled.div`
+  text-align: left;
+  margin-top: 2rem;
+
+  .contact-heading > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 1rem;
+  }
+
+  .contact-heading > div > h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    line-height: 1.5rem;
+    color: #1f1f1f;
+  }
+
+  .contact-heading > p {
+    font-size: 1rem;
+    font-weight: 400;
+
+    line-height: 1.5rem;
+    color: #6c757d;
+  }
+
+  .contact-list-container {
+    margin-top: 1rem;
+  }
+
+  .contact-list > li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .contact-list li > a {
+    margin: 0;
+    transition: ease-in-out 0.2s;
+  }
+
+  .contact-list li > a:hover {
+    filter: brightness(1.5);
+  }
+
+  .contact-list li h3 {
+    font-weight: 600;
+    font-size: 1.3rem;
+
+    color: #1f1f1f;
+  }
+
+  .contact-list p,
+  a {
+    font-size: 1rem;
+    font-weight: 400;
+
+    line-height: 1.5rem;
+    color: #6c757d;
+
+    margin-top: 8px;
+  }
+
+  .link-border {
+    text-decoration: underline 1px solid #c2c2c2;
+    text-underline-offset: 4px;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
   }
 `;
 
@@ -372,6 +486,20 @@ export const Experience = styled.div`
   width: 100%;
 
   grid-area: experience;
+`;
+
+export const Certificate = styled.div`
+  text-align: left;
+  width: 100%;
+
+  grid-area: certificate;
+`;
+
+export const Languages = styled.div`
+  text-align: left;
+  width: 100%;
+
+  grid-area: languages;
 `;
 
 export const Education = styled.div`
@@ -426,25 +554,29 @@ export const ExperienceList = styled.ul`
     margin-bottom: 8px;
   }
 
-  .job-title {
-    font-weight: 500;
-    font-size: 1.2rem;
-    color: #111;
-  }
-
   .time-worked {
     font-weight: 400;
     font-size: 1rem;
-    color: #c2c2c2;
+    color: #6c757d;
   }
 `;
 
 interface IActive {
-  animateDirection: "left" | "right";
+  animateDirection: "left" | "right" | "center";
+}
+
+function handleDirection(animateDirection: string) {
+  if (animateDirection === "left") {
+    return GoToLeft;
+  } else if (animateDirection === "right") {
+    return GoToRight;
+  }
+
+  return GoToCenter;
 }
 
 export const Active = styled.div<IActive>`
-  width: 50%;
+  width: 30%;
   height: 80%;
 
   display: block;
@@ -453,7 +585,7 @@ export const Active = styled.div<IActive>`
   background-color: white;
   border-radius: 4px;
 
-  animation: ${({ animateDirection }) =>
-      animateDirection === "left" ? GoToLeft : GoToRight}
+  animation: ${({ animateDirection }) => handleDirection(animateDirection)}
     forwards 0.3s;
+  overflow: hidden;
 `;

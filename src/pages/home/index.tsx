@@ -3,20 +3,31 @@ import {
   BookOpen,
   CheckCircle,
   DownloadSimple,
+  Envelope,
   Football,
   GithubLogo,
   LinkedinLogo,
   MusicNote,
   Note,
-  Student,
-  Suitcase,
+  Phone,
 } from "phosphor-react";
 
 import Picture from "../../assets/picture.png";
 import CV from "../../assets/Currículo em Inglês.pdf";
 
-import * as Styled from "./styles";
+import {
+  CERTIFICATE,
+  EDUCATION,
+  EXPERIENCE,
+  Languages,
+} from "../../services/AboutMe";
+
+import JobList from "../../components/ExperienceList/Job";
+import EducationList from "../../components/ExperienceList/Education";
+import Certificates from "../../components/ExperienceList/Certificates";
+
 import useFetch from "../../hooks/useFetch";
+import * as Styled from "./styles";
 
 interface IResponse {
   avatar_url: string;
@@ -25,21 +36,24 @@ interface IResponse {
   public_repos: string;
 }
 
-type IDirection = "left" | "right";
-type ISelect = "portfolio" | "skills";
+type IDirection = "left" | "right" | "center";
+type ISelect = "portfolio" | "skills" | "contact";
 
 export default function Home() {
   const { data, loading } = useFetch<IResponse>(
     "https://api.github.com/users/RuanDevJs"
   );
 
-  const [direction, setDirection] = useState<IDirection>("right");
-  const [activeSelect, setActiveSelect] = useState<ISelect>("skills");
+  const [direction, setDirection] = useState<IDirection>("center");
+  const [activeSelect, setActiveSelect] = useState<ISelect>("contact");
 
   const handleToggleSelect = useCallback((direction: IDirection) => {
     if (direction === "right") {
       setDirection("right");
       setActiveSelect("skills");
+    } else if (direction === "center") {
+      setDirection("center");
+      setActiveSelect("contact");
     } else {
       setDirection("left");
       setActiveSelect("portfolio");
@@ -63,7 +77,9 @@ export default function Home() {
   return (
     <Styled.Container>
       <Styled.Picture>
-        <img src={Picture} alt="Picture Profile" draggable="false" />
+        <a href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/">
+          <img src={Picture} alt="Picture Profile" draggable="false" />
+        </a>
       </Styled.Picture>
 
       <Styled.Heading>
@@ -114,99 +130,57 @@ export default function Home() {
       </Styled.Bio>
 
       <Styled.SelectForm>
-        <div className="select-heading">
+        <Styled.SelectHeading>
           <span onClick={() => handleToggleSelect("left")}>About Me</span>
+          <span onClick={() => handleToggleSelect("center")}>Contact</span>
           <span onClick={() => handleToggleSelect("right")}>Skills</span>
           <Styled.Active animateDirection={direction} />
-        </div>
+        </Styled.SelectHeading>
 
         <Styled.Portfolio
           data-animation="up"
           data-active={activeSelect === "portfolio"}
         >
+          {/* About Me */}
           <Styled.AboutMe className="portfolio-wrap">
             <h2>About Me</h2>
             <p>
-              Currently, I am actively seeking new job opportunities and
-              challenges, always ready to learn new technologies, tools, and
-              gain fresh experiences as a developer.
+              My name is Ruan Vitor Elpidio, and I am a 19-year-old Front-End
+              Developer. In 2021, I successfully completed my high school
+              education at COTEMIG Integrated Technical Course, where I gained
+              expertise in web development, including JavaScript, PHP and MySQL
+              concepts. In my last job as a Front End Developer (remote), I was
+              in charge of creating features, fixing old codes, making E2E and
+              simulating the customer experience on websites using Vue.js,
+              TypeScript and Cypress. Besides that, I gained a pretty good
+              experience at communication, listening, responsibility and
+              understanding due my contact on the after sales team, where I had
+              to help them, participate and guide 1:1 customers meetings (to
+              resolve their problem, give them deadlines for a solution, take
+              them easy).
             </p>
           </Styled.AboutMe>
+          {/* Education */}
           <Styled.Education className="portfolio-wrap">
             <h2>Education</h2>
-            <Styled.ExperienceList>
-              <li>
-                <div className="experience-heading">
-                  <Student color="#32a6fa" size={32} />
-                  <div className="experience-info">
-                    <h2>COTEMIG Integrated Technical Course</h2>
-                    <ul className="experience-info-list">
-                      <li>
-                        <p className="job-title">
-                          High School and Technical Course
-                        </p>
-                      </li>
-                      <li>
-                        <p className="time-worked">Jan 2020 - Dec 2021</p>
-                      </li>
-                      <li>
-                        <p className="time-worked">
-                          Belo Horizonte, Minas Gerais, Brasil (Remote)
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </Styled.ExperienceList>
+            <EducationList data={EDUCATION} />
           </Styled.Education>
+          {/* Stacks Certificates */}
+          <Styled.Certificate className="portfolio-wrap">
+            <h2>Stacks Certificates</h2>
+            <Certificates data={CERTIFICATE} />
+          </Styled.Certificate>
+          {/* Work Experience */}
           <Styled.Experience className="portfolio-wrap">
             <h2>Experience</h2>
-            <Styled.ExperienceList>
-              <li>
-                <div className="experience-heading">
-                  <Suitcase color="#32a6fa" size={32} />
-                  <div className="experience-info">
-                    <h2>Speed IO</h2>
-                    <ul className="experience-info-list">
-                      <li>
-                        <p className="job-title">Front-end Development</p>
-                      </li>
-                      <li>
-                        <p className="time-worked">Jan 2022 - Aug 2023</p>
-                      </li>
-                      <li>
-                        <p className="time-worked">
-                          São Paulo, São Paulo, Brasil (Remote)
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="experience-heading">
-                  <Suitcase color="#32a6fa" size={32} />
-                  <div className="experience-info">
-                    <h2>Verticis Webstudio</h2>
-                    <ul className="experience-info-list">
-                      <li>
-                        <p className="job-title">Software Development Intern</p>
-                      </li>
-                      <li>
-                        <p className="time-worked">Jun 2021 - Dec 2021</p>
-                      </li>
-                      <li>
-                        <p className="time-worked">
-                          Belo Horizonte, Minas Gerais, Brasil
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </Styled.ExperienceList>
+            <JobList data={EXPERIENCE} />
           </Styled.Experience>
+          {/* Languages */}
+          <Styled.Languages className="portfolio-wrap">
+            <h2>Languages</h2>
+            <EducationList data={Languages} />
+          </Styled.Languages>
+          {/* Others */}
           <Styled.Others className="portfolio-wrap">
             <h2>Others</h2>
             <Styled.ExperienceList>
@@ -409,6 +383,68 @@ export default function Home() {
             </ul>
           </div>
         </Styled.Skills>
+
+        <Styled.Contact
+          data-animation="down"
+          data-active={activeSelect === "contact"}
+        >
+          <div className="contact-heading">
+            <div>
+              <Phone size={25} color="#32a6fa" weight="light" />
+              <h2>Contact Me</h2>
+            </div>
+            <p>
+              {" "}
+              I have a nice experience working from home. My last job was
+              totally remote. Every start of the week my team had a meeting in
+              the morning to create a report of what tasks each one will work on
+              during the week. After we had meetings in the afternoons to
+              describe the progress of each task that was in report from each
+              one.{" "}
+            </p>
+          </div>
+          <div className="contact-list-container">
+            <ul className="contact-list">
+              <li>
+                <div className="icon">
+                  <Envelope size={32} color="#32a6fa" weight="light" />
+                </div>
+                <div>
+                  <h3>E-mail </h3>
+                  <p>ruanvelpidio@hotmail.com</p>
+                </div>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/">
+                  <LinkedinLogo size={32} color="#32a6fa" weight="light" />
+                </a>
+                <a href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/">
+                  <h3>Linkedin </h3>
+                  <a
+                    className="link-border"
+                    href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/"
+                  >
+                    Ruan Vitor
+                  </a>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/RuanDevJs">
+                  <GithubLogo size={32} color="#32a6fa" weight="light" />
+                </a>
+                <a href="https://github.com/RuanDevJs">
+                  <h3>Github </h3>
+                  <a
+                    className="link-border"
+                    href="https://github.com/RuanDevJs"
+                  >
+                    Ruan DevJs
+                  </a>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </Styled.Contact>
       </Styled.SelectForm>
     </Styled.Container>
   );
