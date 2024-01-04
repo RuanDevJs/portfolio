@@ -77,7 +77,7 @@ export default function Home() {
   return (
     <Styled.Container>
       <Styled.Picture>
-        <a href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/">
+        <a href="https://www.linkedin.com/in/ruan-vitor-elpídio-61232b1b7">
           <img src={Picture} alt="Picture Profile" draggable="false" />
         </a>
       </Styled.Picture>
@@ -101,7 +101,7 @@ export default function Home() {
             <a href="https://dev.to/ruanvitor">
               <Note size={32} weight="fill" />
             </a>
-            <a href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/">
+            <a href="https://www.linkedin.com/in/ruan-vitor-elpídio-61232b1b7">
               <LinkedinLogo size={32} weight="fill" />
             </a>
           </div>
@@ -415,14 +415,14 @@ export default function Home() {
                 </div>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/">
+                <a href="https://www.linkedin.com/in/ruan-vitor-elpídio-61232b1b7">
                   <LinkedinLogo size={32} color="#32a6fa" weight="light" />
                 </a>
-                <a href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/">
+                <a href="https://www.linkedin.com/in/ruan-vitor-elpídio-61232b1b7">
                   <h3>Linkedin </h3>
                   <a
                     className="link-border"
-                    href="https://www.linkedin.com/in/ruan-vitor-elp%C3%ADdio-61232b1b7/"
+                    href="https://www.linkedin.com/in/ruan-vitor-elpídio-61232b1b7"
                   >
                     Ruan Vitor
                   </a>
