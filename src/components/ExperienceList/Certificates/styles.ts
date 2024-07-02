@@ -25,7 +25,7 @@ export const ExperienceList = styled.ul`
   .experience-info > h2 {
     font-size: 1.2rem;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: capitalize;
 
     color: #32a6fa;
     transition: ease-in-out 0.32s;
@@ -47,7 +47,7 @@ export const ExperienceList = styled.ul`
 
   .info-list-download {
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 14px;
     color: #6c757d;
 
     transition: 0.3s ease-in-out;

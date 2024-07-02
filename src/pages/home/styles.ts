@@ -373,9 +373,9 @@ export const Portfolio = styled.div`
 
   grid-template-areas:
     "about about"
-    "education education"
-    "certificate certificate"
     "experience experience"
+    "certificate certificate"
+    "education education"
     "languages languages"
     "others others";
   gap: 1rem;

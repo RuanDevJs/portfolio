@@ -5,8 +5,11 @@ interface IDataInfo {
   description: string;
   time: string;
   locale: string;
-  skills?: string;
-  moreDetails?: string;
+  skills?: {
+    title: string;
+    content: string;
+  }[];
+  moreDetails?: string[];
 }
 
 interface IData {
@@ -46,12 +49,27 @@ export default function Job({ data }: Props) {
                       </li>
                       <li>
                         <p className="info-list-details">
-                          Service Provided: {data.moreDetails}
+                          Service Provided:{" "}
+                          {data.moreDetails && data.moreDetails[0]}
+                        </p>
+                        <p className="info-list-details">
+                          {data.moreDetails && data.moreDetails[1]}
                         </p>
                       </li>
                       <li className="info-list-skills">
-                        <span>Skills:</span>
-                        <p>{data.skills}</p>
+                        <span id="span-skills">Technical and Soft Skills</span>
+                        <ul>
+                          {data.skills?.length &&
+                            data?.skills.map(({ title, content }, index) => {
+                              return (
+                                <li key={index}>
+                                  <h4>
+                                    • {title} <span>{content}</span>
+                                  </h4>
+                                </li>
+                              );
+                            })}
+                        </ul>
                       </li>
                     </ul>
                   </div>

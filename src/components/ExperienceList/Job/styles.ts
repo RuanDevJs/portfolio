@@ -45,15 +45,36 @@ export const ExperienceList = styled.ul`
   }
 
   .info-list-skills {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
   }
 
-  .info-list-skills p {
-    font-weight: 400;
+  .info-list-skills ul li {
+    margin: 8px 0 0 12px;
+  }
+
+  .info-list-skills ul li span {
+    list-style: circle !important;
+    display: inline;
+  }
+
+  #span-skills {
+    font-weight: 600;
+    color: #32a6fa !important;
+  }
+
+  .info-list-skills ul li h4 {
+    font-weight: 600;
     font-size: 1rem;
     color: #111;
+  }
 
+  .info-list-skills > ul li span {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(108, 117, 125);
+
+    line-height: 1.5rem;
     margin-left: 5px;
   }
 
@@ -69,5 +90,7 @@ export const ExperienceList = styled.ul`
 
     line-height: 1.5rem;
     color: #6c757d;
+
+    margin-top: 8px;
   }
 `;

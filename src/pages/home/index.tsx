@@ -145,19 +145,23 @@ export default function Home() {
           <Styled.AboutMe className="portfolio-wrap">
             <h2>About Me</h2>
             <p>
-              My name is Ruan Vitor Elpidio, and I am a 19-year-old Front-End
-              Developer. In 2021, I successfully completed my high school
-              education at COTEMIG Integrated Technical Course, where I gained
-              expertise in web development, including JavaScript, PHP and MySQL
-              concepts. In my last job as a Front End Developer (remote), I was
-              in charge of creating features, fixing old codes, making E2E and
-              simulating the customer experience on websites using Vue.js,
-              TypeScript and Cypress. Besides that, I gained a pretty good
-              experience at communication, listening, responsibility and
-              understanding due my contact on the after sales team, where I had
-              to help them, participate and guide 1:1 customers meetings (to
-              resolve their problem, give them deadlines for a solution, take
-              them easy).
+              My name is Ruan Vitor Elpidio, a 20-year-old Front-End Developer.
+              I completed my high school education in the Integrated Technical
+              Course at COTEMIG in 2021, gaining skills in web development
+              including HTML, CSS, JavaScript, PHP, and MySQL. <br />
+              <br />
+              I interned at Verticis Webstudio for six months, focusing on
+              WordPress maintenance and feature implementation, enhancing my
+              proficiency in PHP and JavaScript. I then worked as a Junior
+              Full-Stack Developer at Speedio for 1 year and 8 months, working
+              with Vue.js, Node.js, TypeScript, Ruby on Rails, and Cypress,
+              which solidified my skills in responsive web development and
+              TypeScript. <br />
+              <br />I have advanced communication skills in English, certified
+              by Cambly. Currently, I am seeking opportunities to expand my
+              knowledge in Front-End Development with React and React Native,
+              known for my effective communication, proactivity, and mastery of
+              TypeScript.
             </p>
           </Styled.AboutMe>
           {/* Education */}
