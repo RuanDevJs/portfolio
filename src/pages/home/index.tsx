@@ -13,7 +13,7 @@ import {
 } from "phosphor-react";
 
 import Picture from "../../assets/picture.png";
-import CV from "../../assets/Currículo em Inglês.pdf";
+import CV from "../../assets/CV.pdf";
 
 import {
   CERTIFICATE,
@@ -145,23 +145,13 @@ export default function Home() {
           <Styled.AboutMe className="portfolio-wrap">
             <h2>About Me</h2>
             <p>
-              My name is Ruan Vitor Elpidio, a 20-year-old Front-End Developer.
-              I completed my high school education in the Integrated Technical
-              Course at COTEMIG in 2021, gaining skills in web development
-              including HTML, CSS, JavaScript, PHP, and MySQL. <br />
-              <br />
-              I interned at Verticis Webstudio for six months, focusing on
-              WordPress maintenance and feature implementation, enhancing my
-              proficiency in PHP and JavaScript. I then worked as a Junior
-              Full-Stack Developer at Speedio for 1 year and 8 months, working
-              with Vue.js, Node.js, TypeScript, Ruby on Rails, and Cypress,
-              which solidified my skills in responsive web development and
-              TypeScript. <br />
-              <br />I have advanced communication skills in English, certified
-              by Cambly. Currently, I am seeking opportunities to expand my
-              knowledge in Front-End Development with React and React Native,
-              known for my effective communication, proactivity, and mastery of
-              TypeScript.
+              I successfully completed my high school education through the Integrated Technical Course at COTEMIG in 2021, gaining solid knowledge in web development, including HTML, CSS, JavaScript, PHP, MySQL, and networks. <br /> <br />
+              In 2021, I began a six-month internship at Verticis Webstudio, where I enhanced my skills in WordPress, focusing on maintenance, refactoring legacy projects, and implementing new features. This experience deepened my understanding of WordPress architecture and strengthened my PHP and JavaScript skills for building robust web solutions. <br /> <br />
+              I gained hands-on experience with React in a professional environment, developing dynamic interfaces and interactive components, applying theoretical knowledge to real projects and improving my front-end development capabilities.<br /> <br />
+              Later, I worked as a Junior Front-End Developer at Speedio for 1 year and 8 months, actively contributing to projects using Vue.js, Node.js, TypeScript, Ruby on Rails, and Cypress. This experience solidified my responsive web development skills and deepened my knowledge of TypeScript. <br /> <br />
+              More recently, I worked for 11 months at Voicer as a Front-End Developer, contributing to feature development and migrating the application from React.js to Next.js, which enhanced my experience with Next.js, PrimeReact, and Tailwind. <br /> <br />
+              I also possess advanced English communication skills, including reading and comprehension. I hold a “Cambly Certificate of Accomplishment” from Cambly, highlighting my proficiency in the English language. <br /> <br />
+              Currently, I am seeking new opportunities that allow me to explore and expand my knowledge in React and React Native. Known for my effective communication skills, responsiveness, proactivity, and strong command of TypeScript, I am prepared to take on new challenges and deliver outstanding results.  <br />
             </p>
           </Styled.AboutMe>
           {/* Education */}
@@ -382,6 +372,15 @@ export default function Home() {
                 <div className="skill">
                   <h2>MongoDB</h2>
                   <p>Intermediate</p>
+                </div>
+              </li>
+              <li>
+                <div className="skill-icon">
+                  <CheckCircle color="#32a6fa" size={24} />
+                </div>
+                <div className="skill">
+                  <h2>R</h2>
+                  <p>Beginner</p>
                 </div>
               </li>
             </ul>

@@ -24,6 +24,16 @@ import Cambly from "../assets/certificates/others/certificate-cambly.pdf";
 
 export const EDUCATION = [
   {
+    title: "FIAP",
+    info: [
+      {
+        description: "Bachelor's Degree in Software Engineering",
+        time: "Jan 2024 - Dec 2027",
+        locale: "São Paulo, SP, Brazil",
+      },
+    ],
+  },
+  {
     title: "COTEMIG Integrated Technical Course",
     info: [
       {
@@ -36,6 +46,36 @@ export const EDUCATION = [
 ];
 
 export const EXPERIENCE = [
+  {
+    title: "Voicer",
+    info: [
+      {
+        description: "Front-End Developer",
+        time: "September 2024 - July 2025",
+        locale: "Porto Alegre, Rio Grande do Sul, Brazil (Remote)",
+        moreDetails: [
+          `For 11 months, I worked as a Front-End Developer at Voicer, where I played a strategic role in enhancing the Distribution Center (DC) management system. I was responsible for developing new features, fixing bugs, and migrating the application from React.js to Next.js, actively contributing to the modernization and performance improvements of the project.`,
+        ],
+        skills: [
+          {
+            title: "React.js and Front-End Development: ",
+            content:
+              "I strengthened my hands-on experience with React.js (using Vite) by developing new system features and building dynamic user interfaces with PrimeReact and Tailwind CSS. My focus was on creating reusable, responsive components that delivered a high-quality user experience.",
+          },
+          {
+            title: "Next.js: ",
+            content:
+              "I was responsible for fully restructuring the project, migrating it from Vite with React.js to the Next.js framework, with an emphasis on scalability, performance, and code organization. I had full autonomy to define and implement architectural patterns throughout the process. Additionally, I developed a new backend using Next.js API routes and successfully integrated it with the frontend.",
+          },
+          {
+            title: "Commitment and autonomy: ",
+            content:
+              "During my time at Voicer, I demonstrated strong commitment in carrying out my tasks, consistently seeking creative and effective solutions to daily challenges. I experienced significant growth in my programming logic and stood out for my autonomy in leading the migration of the project from React (Vite) to Next.js. This transition allowed me to practically apply my knowledge in Next.js, both on the Frontend and Backend.",
+          },
+        ],
+      },
+    ],
+  },
   {
     title: "Speed IO",
     info: [
@@ -198,6 +238,16 @@ export const CERTIFICATE = [
 ];
 
 export const Languages = [
+  {
+    title: "Cambly",
+    info: [
+      {
+        description: "English Tutors Online",
+        time: "English Level C1 (Advanced)",
+        locale: "Remote",
+      },
+    ],
+  },
   {
     title: "Number One",
     info: [
